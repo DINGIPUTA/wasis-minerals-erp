@@ -1,0 +1,9 @@
+{
+  "name": "ওয়াসিস মিনারেল এন্ড মেটালাস লিমিটেড ERP",
+  "short_name": "Wasis ERP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#16232e",
+  "lang": "bn"
+}

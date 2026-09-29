@@ -1,0 +1,7 @@
+<!doctype html><html lang="bn"><head><meta charset="utf-8"><title>Invoice {{r.invoice}}</title><style>
+body{font-family:Arial,"Noto Sans Bengali",sans-serif;margin:35px;color:#111}.head{text-align:center;border-bottom:2px solid #111;margin-bottom:20px}.row{display:flex;justify-content:space-between}table{width:100%;border-collapse:collapse;margin-top:25px}th,td{border:1px solid #888;padding:10px;text-align:left}.total{text-align:right;font-size:20px;font-weight:bold}.print{margin:15px 0;padding:10px}@media print{.print{display:none}}
+</style></head><body><div class="head"><h1>ওয়াসিস মিনারেল এন্ড মেটালাস লিমিটেড</h1><p>Import • Export • Stone Supply</p></div>
+<div class="row"><div><b>Customer:</b> {{r.customer}}<br>{{r.phone}}<br>{{r.address}}</div><div><b>Invoice:</b> {{r.invoice}}<br><b>Date:</b> {{r.delivery_date}}</div></div>
+<table><tr><th>Product</th><th>Quantity (Ton)</th><th>Rate/Ton</th><th>Total</th></tr><tr><td>{{r.product}}</td><td>{{r.quantity}}</td><td>৳ {{r.price}}</td><td>৳ {{r.quantity*r.price}}</td></tr></table>
+<p class="total">Total: ৳ {{r.quantity*r.price}}<br>Paid: ৳ {{r.paid}}<br>Due: ৳ {{r.quantity*r.price-r.paid}}</p>
+<button class="print" onclick="window.print()">Print Invoice</button><p>Authorized Signature: __________________</p></body></html>

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<h1>জাহাজ Cost: {{ship.ship_name}}</h1>
+<div class="grid"><div class="stat">Base Cost/Ton<br><b>৳ {{ "%.2f"|format(ship.cost_per_ton) }}</b></div>
+<div class="stat">Extra Costs<br><b>৳ {{ "%.2f"|format(total) }}</b></div>
+<div class="stat">Effective Cost/Ton<br><b>৳ {{ "%.2f"|format(cost_per_ton) }}</b></div></div>
+<form method="post" class="form"><input name="category" placeholder="যেমন: Unloading/Freight/Port" required><input name="amount" type="number" step="0.01" placeholder="Amount" required><input name="note" placeholder="Note"><button>Add Cost</button></form>
+<table><tr><th>Category</th><th>Amount</th><th>Note</th></tr>{% for r in costs %}<tr><td>{{r.category}}</td><td>{{r.amount}}</td><td>{{r.note}}</td></tr>{% endfor %}</table>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<h1>Customer Ledger: {{customer.name}}</h1><div class="stat">Current Due<br><b>৳ {{ "%.2f"|format(balance) }}</b></div>
+<table><tr><th>Date</th><th>Reference</th><th>Type</th><th>Debit</th><th>Credit</th><th>Balance</th></tr>
+{% for e in entries %}<tr><td>{{e.date}}</td><td>{{e.ref}}</td><td>{{e.kind}}</td><td>{{e.debit}}</td><td>{{e.credit}}</td><td>{{e.balance}}</td></tr>{% endfor %}</table>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}<h1>Profit & Loss</h1>
+<p><a href="/profit-loss?period=today">আজ</a> | <a href="/profit-loss?period=month">এই মাস</a></p>
+<div class="grid"><div class="stat">Sales Revenue<br><b>৳ {{ "%.2f"|format(revenue) }}</b></div>
+<div class="stat">Stock Cost<br><b>৳ {{ "%.2f"|format(stock_cost) }}</b></div>
+<div class="stat">Delivery Cost<br><b>৳ {{ "%.2f"|format(delivery) }}</b></div>
+<div class="stat">Other Expenses<br><b>৳ {{ "%.2f"|format(expenses) }}</b></div>
+<div class="stat">Net Profit<br><b>৳ {{ "%.2f"|format(profit) }}</b></div></div>
+<table><tr><th>Particular</th><th>Amount</th></tr><tr><td>Sales Revenue</td><td>{{revenue}}</td></tr><tr><td>Stock Cost</td><td>{{stock_cost}}</td></tr><tr><td>Delivery Cost</td><td>{{delivery}}</td></tr><tr><td>Other Expenses</td><td>{{expenses}}</td></tr><tr><th>Net Profit</th><th>{{profit}}</th></tr></table>{% endblock %}

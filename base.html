@@ -1,0 +1,8 @@
+
+<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ওয়াসিস মিনারেল এন্ড মেটালাস লিমিটেড ERP</title><meta name="theme-color" content="#16232e"><link rel="manifest" href="/static/manifest.json"><link rel="stylesheet" href="/static/style.css"></head><body>
+{% if session.uid %}<div class="mobile-top"><button class="menu-btn" onclick="document.querySelector('aside').classList.toggle('open')">☰</button><div class="brand">ওয়াসিস মিনারেল এন্ড মেটালাস লিমিটেড</div></div><aside><h2>ওয়াসিস মিনারেল এন্ড মেটালাস লিমিটেড</h2>
+<a href="/">Dashboard</a><a href="/ships">জাহাজ</a><a href="/stock">স্টক</a><a href="/customers">কাস্টমার</a><a href="/sales">বিক্রি/ডেলিভারি</a><a href="/payments">পেমেন্ট</a><a href="/trucks">গাড়ি</a><a href="/expenses">খরচ</a><a href="/reports">রিপোর্ট</a><a href="/profit-loss">Profit & Loss</a>{% if session.role=='admin' %}<a href="/staff">স্টাফ</a>{% endif %}
+<div class="user">{{session.name}} ({{session.role}})<br><a href="/logout">Logout</a></div></aside><main>{% endif %}
+{% with messages=get_flashed_messages(with_categories=true) %}{% for cat,msg in messages %}<div class="alert {{cat}}">{{msg}}</div>{% endfor %}{% endwith %}
+{% block content %}{% endblock %}</main><script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/static/sw.js").catch(()=>{});}document.addEventListener("click",e=>{if(e.target.closest("main")){const a=document.querySelector("aside");if(a)a.classList.remove("open");}});</script></body></html>
